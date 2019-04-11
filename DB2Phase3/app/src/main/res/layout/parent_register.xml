@@ -26,11 +26,6 @@
             android:layout_height="wrap_content"
             android:text="Enter your email" ></EditText>
 
-        <EditText
-            android:id="@+id/EditText2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enter your parent email" ></EditText>
 
         <EditText
             android:id="@+id/EditText3"
@@ -51,12 +46,6 @@
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown"/>
 
-        <Spinner
-            android:id="@+id/spin2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"/>
 
         <EditText
             android:id="@+id/EditText5"
