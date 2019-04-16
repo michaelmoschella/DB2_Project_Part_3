@@ -8,8 +8,26 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
+import org.json.JSONObject;
+import org.json.JSONException;
+
+import java.util.HashMap;
+import java.util.Map;
+
+
 
 public class MainActivity extends AppCompatActivity {
+    private Button btnRegisterParent;
+    private Button btnRegisterStudent;
+    private RequestQueue Q;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +44,54 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-    }
 
+        btnRegisterStudent = (Button) findViewById(R.id.button1);
+        btnRegisterStudent.setOnClickListener((v)->{
+            System.out.println("Hello World");
+        });
+        btnRegisterParent = (Button) findViewById(R.id.button2);
+        btnRegisterParent.setOnClickListener((v)->{
+            System.out.println("BYE");
+            String data = "{\"the_stuff\":7}";
+            submit(data);
+        });
+    }
+    private void submit(String data){
+        String save_data = data;
+        String url = "http://10.0.2.2/phase3/php/dummy.php";
+        Q = Volley.newRequestQueue(getApplicationContext());
+        StringRequest sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>(){
+            @Override
+            public void onResponse(String response) {
+                System.out.println(response);
+                /*try {
+                    JSONObject the_response = new JSONObject(response);
+
+                } catch (JSONException e) {
+                    System.out.println("JSON error");
+                }*/
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println(error.toString());
+            }
+
+        }){
+            /*@Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }*/
+            @Override
+            protected Map<String, String> getParams(){
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("the_stuff", "47");
+                return params;
+            };
+        };
+        sr.setShouldCache(false);
+        Q.add(sr);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -49,4 +113,5 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }
