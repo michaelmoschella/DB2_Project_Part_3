@@ -27,6 +27,8 @@
         <activity android:name=".registerStudent"/>
         <activity android:name=".loginParent"/>
         <activity android:name=".loginStudent"/>
+        <activity android:name=".parentDashboard"/>
+
     </application>
 
 </manifest>

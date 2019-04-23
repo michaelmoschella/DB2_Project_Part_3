@@ -20,6 +20,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class loginParent extends AppCompatActivity {
     private Button btnSubmit;
     private Button btnMain;
@@ -28,6 +29,7 @@ public class loginParent extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parent_login);
+
 
         btnSubmit = (Button) findViewById(R.id.button1);
         btnSubmit.setOnClickListener((v)-> {
@@ -60,7 +62,10 @@ public class loginParent extends AppCompatActivity {
                     System.out.println(status);
                     if (status == 1) {
                         // Change this to parent dashboard
-                        Intent i = new Intent(loginParent.this, MainActivity.class);
+                        the_global global = new the_global();
+                        global.active_id = the_response.getInt("uid");
+                        System.out.println(global.active_id);
+                        Intent i = new Intent(loginParent.this, parentDashboard.class);
                         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(i);
                     } else {
