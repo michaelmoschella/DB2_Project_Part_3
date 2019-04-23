@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import android.content.Intent;
+
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.Request;
@@ -27,7 +29,8 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     private Button btnRegisterParent;
     private Button btnRegisterStudent;
-    private RequestQueue Q;
+    private Button btnLoginParent;
+    private Button btnLoginStudent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,50 +50,28 @@ public class MainActivity extends AppCompatActivity {
 
         btnRegisterStudent = (Button) findViewById(R.id.button1);
         btnRegisterStudent.setOnClickListener((v)->{
-            System.out.println("Hello World");
+            System.out.println("Change to Register Student View");
+            Intent i = new Intent(this, registerStudent.class);
+            startActivity(i);
         });
         btnRegisterParent = (Button) findViewById(R.id.button2);
         btnRegisterParent.setOnClickListener((v)->{
-            System.out.println("BYE");
-            String data = "{\"the_stuff\":7}";
-            submit(data);
+            System.out.println("Change to Register Parent View");
+            Intent i = new Intent(this, registerParent.class);
+            startActivity(i);
         });
-    }
-    private void submit(String data){
-        String save_data = data;
-        String url = "http://10.0.2.2/phase3/php/dummy.php";
-        Q = Volley.newRequestQueue(getApplicationContext());
-        StringRequest sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>(){
-            @Override
-            public void onResponse(String response) {
-                System.out.println(response);
-                /*try {
-                    JSONObject the_response = new JSONObject(response);
-
-                } catch (JSONException e) {
-                    System.out.println("JSON error");
-                }*/
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                System.out.println(error.toString());
-            }
-
-        }){
-            /*@Override
-            public String getBodyContentType() {
-                return "application/json; charset=utf-8";
-            }*/
-            @Override
-            protected Map<String, String> getParams(){
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("the_stuff", "47");
-                return params;
-            };
-        };
-        sr.setShouldCache(false);
-        Q.add(sr);
+        btnLoginStudent = (Button) findViewById(R.id.button3);
+        btnLoginStudent.setOnClickListener((v)->{
+            System.out.println("Change to Login Student View");
+            Intent i = new Intent(this, loginStudent.class);
+            startActivity(i);
+        });
+        btnLoginParent = (Button) findViewById(R.id.button4);
+        btnLoginParent.setOnClickListener((v)->{
+            System.out.println("Change to Login Parent View");
+            Intent i = new Intent(this, loginParent.class);
+            startActivity(i);
+        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

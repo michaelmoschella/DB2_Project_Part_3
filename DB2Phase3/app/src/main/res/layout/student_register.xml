@@ -74,13 +74,7 @@
             android:id="@+id/EditText7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="City" ></EditText>
-
-        <EditText
-            android:id="@+id/EditText8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="State"></EditText>
+            android:text="Username" ></EditText>
 
         <Button
             android:id="@+id/button1"
