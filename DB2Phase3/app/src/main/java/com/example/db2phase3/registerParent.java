@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Spinner;
 
 
 import com.android.volley.RequestQueue;
@@ -50,6 +51,10 @@ public class registerParent extends AppCompatActivity {
             String confirm = edit_confirm.getText().toString();
             //System.out.println(confirm);
 
+            Spinner mySpinner = (Spinner) findViewById(R.id.spin1);
+            String role = mySpinner.getSelectedItem().toString();
+            //System.out.println(role);
+
             EditText edit_name = findViewById(R.id.EditText5);
             String name = edit_name.getText().toString();
             //System.out.println(name);
@@ -66,7 +71,7 @@ public class registerParent extends AppCompatActivity {
             params.put("Parent_Email", email);
             params.put("Parent_Pass", password);
             params.put("Parent_Confirm_Pass", confirm);
-            params.put("p_role", "Moderator");
+            params.put("p_role", role);
             params.put("Parent_Name", name);
             params.put("Parent_Phone_Number", phone);
             params.put("p_username", username);

@@ -49,14 +49,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"/>
+            android:spinnerMode="dropdown"
+            android:entries="@array/s_role"
+            />
 
         <Spinner
             android:id="@+id/spin2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"/>
+            android:spinnerMode="dropdown"
+            android:entries="@array/grades"
+        />
 
         <EditText
             android:id="@+id/EditText5"

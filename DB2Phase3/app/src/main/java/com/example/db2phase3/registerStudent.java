@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -46,6 +47,15 @@ public class registerStudent extends AppCompatActivity {
             String confirm = edit_confirm.getText().toString();
             //System.out.println(confirm);
 
+            Spinner r_Spinner = (Spinner) findViewById(R.id.spin1);
+            String role = r_Spinner.getSelectedItem().toString();
+            //System.out.println(role);
+
+            Spinner g_Spinner = (Spinner) findViewById(R.id.spin2);
+            String grade = g_Spinner.getSelectedItem().toString();
+            //System.out.println(role);
+
+
             EditText edit_name = findViewById(R.id.EditText5);
             String name = edit_name.getText().toString();
             //System.out.println(name);
@@ -63,11 +73,11 @@ public class registerStudent extends AppCompatActivity {
             params.put("Students_Parent_Email", p_email);
             params.put("Student_Pass", password);
             params.put("Student_Confirm_Pass", confirm);
-            params.put("s_role", "Both");
+            params.put("s_role", role);
             params.put("Student_Name", name);
             params.put("Student_Phone_Number", phone);
             params.put("s_username", username);
-            params.put("s_grade", "12");
+            params.put("s_grade", grade);
 
             submit(params);
         });

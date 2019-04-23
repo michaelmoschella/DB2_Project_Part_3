@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="grades">
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="s_role">
+        <item>Both</item>
+        <item>Mentor</item>
+        <item>Mentee</item>
+        <item>None</item>
+    </string-array>
+
+    <string-array name="p_role">
+        <item>Moderator</item>
+        <item>None</item>
+    </string-array>
+</resources>
