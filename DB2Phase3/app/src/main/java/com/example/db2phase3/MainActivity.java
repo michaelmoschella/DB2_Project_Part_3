@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         cloak.setText("29 bottles of beer,");
 
 
-        
+
         cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
         ((LinearLayout) line).addView(cloak);
