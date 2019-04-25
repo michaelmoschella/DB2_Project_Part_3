@@ -8,6 +8,118 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parent Dashboard"
+            android:textSize="45dp"></TextView>
+
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black" />
+
+        <TextView
+            android:id="@+id/p_dashboard1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User"
+            android:textSize="45dp"></TextView>
+
+        <TextView
+            android:id="@+id/p_dashboard2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:textSize="45dp"></TextView>
+
+        <Button
+            android:id="@+id/p_dashboard3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change your profile"
+            android:textSize="45dp"></Button>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black" />
+
+        <TextView
+            android:id="@+id/p_dashboard4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User"
+            android:textSize="45dp"></TextView>
+
+        <TextView
+            android:id="@+id/p_dashboard5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:textSize="45dp"></TextView>
+
+        <Button
+            android:id="@+id/p_dashboard6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change your Children's profile"
+            android:textSize="45dp"></Button>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black" />
+
+        <TextView
+            android:id="@+id/p_dashboard7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parent"
+            android:textSize="45dp"></TextView>
+
+        <TextView
+            android:id="@+id/p_dashboard8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sections"
+            android:textSize="45dp"></TextView>
+
+        <Button
+            android:id="@+id/p_dashboard9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Sections"
+            android:textSize="45dp"></Button>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black" />
+
+        <TextView
+            android:id="@+id/p_dashboard10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Moderator"
+            android:textSize="45dp"></TextView>
+
+        <TextView
+            android:id="@+id/p_dashboard11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Moderator"
+            android:textSize="45dp"></TextView>
+
+        <Button
+            android:id="@+id/p_dashboard12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Moderator"
+            android:textSize="45dp"></Button>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
