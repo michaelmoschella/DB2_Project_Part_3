@@ -103,31 +103,7 @@
             android:text="View Sections"
             android:textSize="20dp"></Button>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/black" />
 
-        <TextView
-            android:id="@+id/p_dashboard10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Moderator"
-            android:textSize="30dp"></TextView>
-
-        <TextView
-            android:id="@+id/p_dashboard11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Moderator"
-            android:textSize="30dp"></TextView>
-
-        <Button
-            android:id="@+id/p_dashboard12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="View Moderator"
-            android:textSize="20dp"></Button>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
