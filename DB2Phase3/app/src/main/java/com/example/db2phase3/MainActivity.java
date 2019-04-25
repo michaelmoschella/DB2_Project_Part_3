@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Context context = this.;
 
-        hat.setText("Course Title: Database 1");
+        hat.setText("Course Title: ");
         hat.setTextSize(20);
 
 
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         TextView cloak = new TextView(this);
-        cloak.setText("Section Name: 301");
+        cloak.setText("Section Name:");
         cloak.setTextSize(20);
 
 
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         ((LinearLayout) line).addView(cloak);
 
         TextView a = new TextView(this);
-        a.setText("Start Date: 2018-09-14");
+        a.setText("Start Date: ");
         a.setTextSize(20);
 
 
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         ((LinearLayout) line).addView(a);
 
         TextView c = new TextView(this);
-        c.setText("End Date: 2018-09-14");
+        c.setText("End Date: ");
         c.setTextSize(20);
 
 
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         TextView b = new TextView(this);
-        b.setText("Time Slot: T 00:00:00-00:00:00");
+        b.setText("Time Slot: ");
         b.setTextSize(20);
 
 
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         ((LinearLayout) line).addView(b);
 
         TextView d = new TextView(this);
-        d.setText("Capacity: 12");
+        d.setText("Capacity: ");
         d.setTextSize(20);
 
 
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         ((LinearLayout) line).addView(d);
 
         TextView e = new TextView(this);
-        e.setText("Mentor Req: 2");
+        e.setText("Mentor Req: ");
         e.setTextSize(20);
 
 
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         ((LinearLayout) line).addView(e);
 
         TextView f = new TextView(this);
-        f.setText("Mentee Req: 2");
+        f.setText("Mentee Req: ");
         f.setTextSize(20);
 
 
@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
         ((LinearLayout) line).addView(f);
 
         TextView g = new TextView(this);
-        g.setText("Enrolled Mentor: 0");
+        g.setText("Enrolled Mentor: ");
         g.setTextSize(20);
 
 
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
         ((LinearLayout) line).addView(g);
 
         TextView h = new TextView(this);
-        h.setText("Enrolled Mentee: 0");
+        h.setText("Enrolled Mentee: ");
         h.setTextSize(20);
 
 
