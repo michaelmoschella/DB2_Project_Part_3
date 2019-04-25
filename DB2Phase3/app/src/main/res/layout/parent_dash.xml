@@ -3,53 +3,59 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/p_dash"
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Parent Dashboard"
-            android:textSize="45dp"></TextView>
-
-
-        <Button
-            android:id="@+id/d_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            android:textSize="20dp"></Button>
-
-        <View
-
+        <LinearLayout
+            android:id="@+id/p_dash"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/black" />
-
-        <TextView
-            android:id="@+id/p_dashboard1"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="User"
-            android:textSize="30dp"></TextView>
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/p_dashboard2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Profile"
-            android:textSize="30dp"></TextView>
+            <TextView
 
-        <Button
-            android:id="@+id/p_dashboard3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Change your profile"
-            android:textSize="20dp"></Button>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parent Dashboard"
+                android:textSize="45dp"></TextView>
+
+
+            <Button
+                android:id="@+id/d_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:textSize="20dp"></Button>
+
+            <View
+
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/p_dashboard1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User"
+                android:textSize="30dp"></TextView>
+
+            <TextView
+                android:id="@+id/p_dashboard2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textSize="30dp"></TextView>
+
+            <Button
+                android:id="@+id/p_dashboard3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change your profile"
+                android:textSize="20dp"></Button>
 
      <!--   <View
             android:layout_width="match_parent"
@@ -77,33 +83,34 @@
             android:text="Change your Children's profile"
             android:textSize="20dp"></Button>  -->
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/black" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black" />
 
-        <TextView
-            android:id="@+id/p_dashboard7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Parent"
-            android:textSize="30dp"></TextView>
+            <TextView
+                android:id="@+id/p_dashboard7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parent"
+                android:textSize="30dp"></TextView>
 
-        <TextView
-            android:id="@+id/p_dashboard8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sections"
-            android:textSize="30dp"></TextView>
+            <TextView
+                android:id="@+id/p_dashboard8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sections"
+                android:textSize="30dp"></TextView>
 
-        <Button
-            android:id="@+id/p_dashboard9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="View Sections"
-            android:textSize="20dp"></Button>
+            <Button
+                android:id="@+id/p_dashboard9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View Sections"
+                android:textSize="20dp"></Button>
 
+        </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
