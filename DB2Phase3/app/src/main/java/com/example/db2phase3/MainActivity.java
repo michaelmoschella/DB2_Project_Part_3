@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 import android.content.Intent;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
@@ -72,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(this, loginParent.class);
             startActivity(i);
         });
+
+
+
+
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
