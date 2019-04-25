@@ -3,6 +3,7 @@ package com.example.db2phase3;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.LinearLayout;
@@ -49,17 +50,13 @@ public class parentDashboard extends AppCompatActivity {
                     for (int i = 0; i < child_objs.length(); i++){
                         JSONObject a_child = child_objs.getJSONObject(i);
                         String[] fields = new String[]{ "name","role"};
-                        /*for (int j = 0; j < 2; j++){
-                            TextView cloak = new TextView(this);
-                            cloak.setText(a_child.GetString);
-
-
-
+                        for (int j = 0; j < 2; j++){
+                            View line =  findViewById(R.id.p_dash);
+                            TextView cloak = new TextView(getApplicationContext());
+                            cloak.setText(a_child.getString(fields[i]));
                             cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-
                             ((LinearLayout) line).addView(cloak);
-
-                        }*/
+                        }
                         System.out.println("**********CHILD*************");
                         System.out.println(a_child.getString("name"));
                         System.out.println(a_child.getString("role"));
