@@ -14,6 +14,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -44,6 +45,26 @@ public class parentDashboard extends AppCompatActivity {
                     String name = the_response.getString("name");
                     System.out.println(name);
                     String role = the_response.getString("role");
+                    JSONArray child_objs = the_response.getJSONArray("children");
+                    for (int i = 0; i < child_objs.length(); i++){
+                        JSONObject a_child = child_objs.getJSONObject(i);
+                        String[] fields = new String[]{ "name","role"};
+                        /*for (int j = 0; j < 2; j++){
+                            TextView cloak = new TextView(this);
+                            cloak.setText(a_child.GetString);
+
+
+
+                            cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                            ((LinearLayout) line).addView(cloak);
+
+                        }*/
+                        System.out.println("**********CHILD*************");
+                        System.out.println(a_child.getString("name"));
+                        System.out.println(a_child.getString("role"));
+                        System.out.println(a_child.getString("uid"));
+                    }
                     /*LinearLayout linearLayout = (LinearLayout)findViewById(R.id.info);
                     TextView valueTV = new TextView(this);
                     valueTV.setText("hallo hallo");
