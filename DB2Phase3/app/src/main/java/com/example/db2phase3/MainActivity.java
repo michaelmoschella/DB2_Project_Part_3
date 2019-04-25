@@ -76,6 +76,29 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        View line =  findViewById(R.id.linlayout);
+
+        TextView hat = new TextView(this);
+
+
+        hat.setText("29 bottles of beer on the wall,");
+
+
+        hat.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+    ((LinearLayout) line).addView(hat);
+
+
+        TextView cloak = new TextView(this);
+        cloak.setText("29 bottles of beer,");
+
+
+        
+        cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+        ((LinearLayout) line).addView(cloak);
+
+
 
 
 
