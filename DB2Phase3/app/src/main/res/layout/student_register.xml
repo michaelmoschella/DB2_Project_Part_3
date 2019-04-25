@@ -24,25 +24,25 @@
             android:id="@+id/EditText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter your email" ></EditText>
+            android:hint="Enter your email" ></EditText>
 
         <EditText
             android:id="@+id/EditText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter your parent email" ></EditText>
+            android:hint="Enter your parent email" ></EditText>
 
         <EditText
             android:id="@+id/EditText3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password" ></EditText>
+            android:hint="Password" ></EditText>
 
         <EditText
             android:id="@+id/EditText4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Confirm Password"></EditText>
+            android:hint="Confirm Password"></EditText>
 
         <Spinner
             android:id="@+id/spin1"
@@ -66,19 +66,19 @@
             android:id="@+id/EditText5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name" ></EditText>
+            android:hint="Name" ></EditText>
 
         <EditText
             android:id="@+id/EditText6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phone Number" ></EditText>
+            android:hint="Phone Number" ></EditText>
 
         <EditText
             android:id="@+id/EditText7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Username" ></EditText>
+            android:hint="Username" ></EditText>
 
         <Button
             android:id="@+id/button1"

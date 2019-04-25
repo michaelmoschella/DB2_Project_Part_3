@@ -24,14 +24,14 @@
             android:id="@+id/EditText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter your email" ></EditText>
+            android:hint="Enter your email" ></EditText>
 
 
         <EditText
             android:id="@+id/EditText3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password" ></EditText>
+            android:hint="Password" ></EditText>
 
 
         <Button
