@@ -83,7 +83,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Context context = this.;
 
-        hat.setText("29 bottles of beer on the wall,");
+        hat.setText("Course Title: Database 1");
+        hat.setTextSize(20);
 
 
         hat.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -92,13 +93,105 @@ public class MainActivity extends AppCompatActivity {
 
 
         TextView cloak = new TextView(this);
-        cloak.setText("29 bottles of beer,");
-
+        cloak.setText("Section Name: 301");
+        cloak.setTextSize(20);
 
 
         cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
         ((LinearLayout) line).addView(cloak);
+
+        TextView a = new TextView(this);
+        a.setText("Start Date: 2018-09-14");
+        a.setTextSize(20);
+
+
+        a.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+        ((LinearLayout) line).addView(a);
+
+        TextView c = new TextView(this);
+        c.setText("End Date: 2018-09-14");
+        c.setTextSize(20);
+
+
+        c.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+        ((LinearLayout) line).addView(c);
+
+
+        TextView b = new TextView(this);
+        b.setText("Time Slot: T 00:00:00-00:00:00");
+        b.setTextSize(20);
+
+
+        b.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+        ((LinearLayout) line).addView(b);
+
+        TextView d = new TextView(this);
+        d.setText("Capacity: 12");
+        d.setTextSize(20);
+
+
+        d.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+        ((LinearLayout) line).addView(d);
+
+        TextView e = new TextView(this);
+        e.setText("Mentor Req: 2");
+        e.setTextSize(20);
+
+
+        e.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+        ((LinearLayout) line).addView(e);
+
+        TextView f = new TextView(this);
+        f.setText("Mentee Req: 2");
+        f.setTextSize(20);
+
+
+        f.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+        ((LinearLayout) line).addView(f);
+
+        TextView g = new TextView(this);
+        g.setText("Enrolled Mentor: 0");
+        g.setTextSize(20);
+
+
+        g.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+        ((LinearLayout) line).addView(g);
+
+        TextView h = new TextView(this);
+        h.setText("Enrolled Mentee: 0");
+        h.setTextSize(20);
+
+
+        h.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+        ((LinearLayout) line).addView(h);
+
+        Button yy = new Button(this);
+        yy.setText("Teach as Mentor");
+
+
+
+        yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+        ((LinearLayout) line).addView(yy);
+
+        Button zz = new Button(this);
+        zz.setText("Enroll as Mentee");
+
+
+
+        zz.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+        ((LinearLayout) line).addView(zz);
+
 
 
 
