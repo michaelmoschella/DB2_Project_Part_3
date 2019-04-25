@@ -1,5 +1,6 @@
 package com.example.db2phase3;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -80,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView hat = new TextView(this);
 
+        //Context context = this.;
 
         hat.setText("29 bottles of beer on the wall,");
 
