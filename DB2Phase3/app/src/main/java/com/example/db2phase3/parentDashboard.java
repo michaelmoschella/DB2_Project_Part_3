@@ -47,14 +47,19 @@ public class parentDashboard extends AppCompatActivity {
                     System.out.println(name);
                     String role = the_response.getString("role");
                     JSONArray child_objs = the_response.getJSONArray("children");
+                    View line =  findViewById(R.id.p_dash);
                     for (int i = 0; i < child_objs.length(); i++){
+                        View liner = new View(getApplicationContext());
+                        liner.setBackgroundColor(getResources().getColor(android.R.color.black));
+                        liner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,2));
+                        ((LinearLayout) line).addView(liner);
                         JSONObject a_child = child_objs.getJSONObject(i);
                         String[] fields = new String[]{ "name","role"};
                         for (int j = 0; j < 2; j++){
-                            View line =  findViewById(R.id.p_dash);
                             TextView cloak = new TextView(getApplicationContext());
-                            cloak.setText(a_child.getString(fields[i]));
+                            cloak.setText(a_child.getString(fields[j]));
                             cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                            cloak.setTextSize(30);
                             ((LinearLayout) line).addView(cloak);
                         }
                         System.out.println("**********CHILD*************");
