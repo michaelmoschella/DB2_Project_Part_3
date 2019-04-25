@@ -79,6 +79,12 @@ public class MainActivity extends AppCompatActivity {
 
         View line =  findViewById(R.id.linlayout);
 
+        View liner = new View(getApplicationContext());
+        liner.setBackgroundColor(getResources().getColor(android.R.color.black));
+        liner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,4));
+        ((LinearLayout) line).addView(liner);
+
+
         TextView hat = new TextView(this);
 
         //Context context = this.;
@@ -191,6 +197,11 @@ public class MainActivity extends AppCompatActivity {
         zz.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
         ((LinearLayout) line).addView(zz);
+
+        View linet = new View(getApplicationContext());
+        linet.setBackgroundColor(getResources().getColor(android.R.color.black));
+        linet.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,4));
+        ((LinearLayout) line).addView(linet);
 
 
 
