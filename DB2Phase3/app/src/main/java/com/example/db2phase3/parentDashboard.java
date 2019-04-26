@@ -61,6 +61,22 @@ public class parentDashboard extends AppCompatActivity {
                             cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                             cloak.setTextSize(30);
                             ((LinearLayout) line).addView(cloak);
+                        j++;
+
+                            TextView zz = new TextView(getApplicationContext());
+                            zz.setText(a_child.getString(fields[j]));
+                            zz.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                            zz.setTextSize(30);
+                            ((LinearLayout) line).addView(zz);
+
+                            Button yy = new Button(getApplicationContext());
+                            yy.setText("Change Child Profile");
+
+
+
+                            yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                            ((LinearLayout) line).addView(yy);
                         }
                         System.out.println("**********CHILD*************");
                         System.out.println(a_child.getString("name"));
