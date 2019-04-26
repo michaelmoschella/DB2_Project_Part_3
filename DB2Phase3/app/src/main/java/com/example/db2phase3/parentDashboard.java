@@ -25,7 +25,11 @@ import java.util.Map;
 public class parentDashboard extends AppCompatActivity {
 
     private RequestQueue Q;
+    private Button btnChangeProfile;
+
     protected void onCreate(Bundle savedInstanceState) {
+
+
         the_global global = new the_global();
         Map<String, String> params = new HashMap<String, String>();
         System.out.println("BEFORE VOLLEY");
@@ -35,6 +39,12 @@ public class parentDashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parent_dash);
 
+        btnChangeProfile = (Button) findViewById(R.id.p_dashboard3);
+        btnChangeProfile.setOnClickListener((v)->{
+            System.out.println(" Change Parent Profile View");
+            Intent i = new Intent(this, ChangeParentProfile.class);
+            startActivity(i);
+        });
         String url = "http://10.0.2.2/phase3/php_stuff/php/parent-dashboard.php";
         Q = Volley.newRequestQueue(getApplicationContext());
         StringRequest sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
