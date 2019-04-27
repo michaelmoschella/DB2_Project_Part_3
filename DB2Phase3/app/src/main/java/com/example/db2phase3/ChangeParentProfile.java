@@ -33,9 +33,15 @@ public class ChangeParentProfile extends AppCompatActivity {
 
         btnSubmit = (Button) findViewById(R.id.button1);
         btnSubmit.setOnClickListener((v)->{
-            EditText edit_email = findViewById(R.id.EditText1);
-            String email = edit_email.getText().toString();
-            //System.out.println(email);
+
+
+            EditText edit_name = findViewById(R.id.EditText5);
+            String name = edit_name.getText().toString();
+            //System.out.println(name);
+
+            EditText edit_username = findViewById(R.id.EditText7);
+            String username = edit_username.getText().toString();
+            //System.out.println(username);
 
             EditText edit_password = findViewById(R.id.EditText3);
             String password = edit_password.getText().toString();
@@ -45,30 +51,41 @@ public class ChangeParentProfile extends AppCompatActivity {
             String confirm = edit_confirm.getText().toString();
             //System.out.println(confirm);
 
-            Spinner mySpinner = (Spinner) findViewById(R.id.spin1);
-            String role = mySpinner.getSelectedItem().toString();
-            //System.out.println(role);
 
-            EditText edit_name = findViewById(R.id.EditText5);
-            String name = edit_name.getText().toString();
-            //System.out.println(name);
 
             EditText edit_phone = findViewById(R.id.EditText6);
             String phone = edit_phone.getText().toString();
             //System.out.println(phone);
 
-            EditText edit_username = findViewById(R.id.EditText7);
-            String username = edit_username.getText().toString();
-            //System.out.println(username);
+            EditText edit_city = findViewById(R.id.EditText7);
+            String city = edit_city.getText().toString();
+            //System.out.println(confirm);
+
+            EditText edit_email = findViewById(R.id.EditText9);
+            String email = edit_email.getText().toString();
+            //System.out.println(phone);
+
+            EditText edit_state = findViewById(R.id.EditText8);
+            String state = edit_state.getText().toString();
+            //System.out.println(phone);
+
+            Spinner mySpinner = (Spinner) findViewById(R.id.spin1);
+            String role = mySpinner.getSelectedItem().toString();
+            //System.out.println(role);
+
+
 
             Map<String, String> params = new HashMap<String, String>();
-            params.put("Parent_Email", email);
-            params.put("Parent_Pass", password);
-            params.put("Parent_Confirm_Pass", confirm);
-            params.put("p_role", role);
             params.put("Parent_Name", name);
-            params.put("Parent_Phone_Number", phone);
             params.put("p_username", username);
+            params.put("Parent_Pass", password);
+            params.put("Parent_Email", email);
+            params.put("Parent_Phone_Number", phone);
+            //params.put("Parent_Confirm_Pass", confirm);
+            params.put("p_role", role);
+
+
+
 
             submit(params);
         });
@@ -76,7 +93,7 @@ public class ChangeParentProfile extends AppCompatActivity {
     }
     private void submit(Map<String, String> params) {
         Map<String, String> the_params = params;
-        String url = "http://10.0.2.2/phase3/php_stuff/php/register-parent.php";
+        String url = "http://10.0.2.2/phase3/php_stuff/php/change-p-profile.php";
         Q = Volley.newRequestQueue(getApplicationContext());
         StringRequest sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -92,7 +109,7 @@ public class ChangeParentProfile extends AppCompatActivity {
                         banner.setText("Congratulations " + the_response.getString("p_username") + ", you have successfully registered!");
                         btnMain = (Button) findViewById(R.id.button1);
                         btnMain.setOnClickListener((v)-> {
-                            Intent i = new Intent(ChangeParentProfile.this, MainActivity.class);
+                            Intent i = new Intent(ChangeParentProfile.this, parentDashboard.class);
                             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(i);
                         });
