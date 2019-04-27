@@ -30,6 +30,16 @@
         <activity android:name=".parentDashboard"/>
         <activity android:name=".studentDashboard"/>
         <activity android:name=".studentViewSections"/>
+        <activity android:name=".ChangeParentProfile"/>
+        <activity android:name=".viewSectionsParent"/>
+
+        <!-- Enter Mike's Activities Below Here-->
+
+        <!-- Enter Mike's Activities Above Here -->
+
+        <!-- Enter Ross' Activities Below Here-->
+
+        <!-- Enter Ross' Activities Above Here -->
 
     </application>
 

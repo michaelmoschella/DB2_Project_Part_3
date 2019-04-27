@@ -1,9 +1,11 @@
 package com.example.db2phase3;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -23,9 +25,12 @@ import java.util.Map;
 
 public class viewSectionsParent extends AppCompatActivity {
 
-
     private RequestQueue Q;
+   private Button btnChangeProfile;
+
     protected void onCreate(Bundle savedInstanceState) {
+
+
         the_global global = new the_global();
         Map<String, String> params = new HashMap<String, String>();
         System.out.println("BEFORE VOLLEY");
@@ -33,8 +38,14 @@ public class viewSectionsParent extends AppCompatActivity {
         params.put("active_id", global.active_id.toString());
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.parent_dash);
+        setContentView(R.layout.parent_sections_list);
 
+        /*btnChangeProfile = (Button) findViewById(R.id.p_dashboard3);
+        btnChangeProfile.setOnClickListener((v)->{
+            System.out.println(" Change Parent Profile View");
+            Intent i = new Intent(this, ChangeParentProfile.class);
+            startActivity(i);
+        });*/
         String url = "http://10.0.2.2/phase3/php_stuff/php/parent-dashboard.php";
         Q = Volley.newRequestQueue(getApplicationContext());
         StringRequest sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
@@ -42,50 +53,162 @@ public class viewSectionsParent extends AppCompatActivity {
             public void onResponse(String response) {
                 System.out.println(response);
                 try {
-
-                    TextView hat = new TextView(getApplicationContext());
                     JSONObject the_response = new JSONObject(response);
                     String name = the_response.getString("name");
                     System.out.println(name);
                     String role = the_response.getString("role");
                     JSONArray child_objs = the_response.getJSONArray("children");
+                    View line =  findViewById(R.id.p_view_sections);
                     for (int i = 0; i < child_objs.length(); i++){
+                        View liner = new View(getApplicationContext());
+                        liner.setBackgroundColor(getResources().getColor(android.R.color.black));
+                        liner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,2));
+                        ((LinearLayout) line).addView(liner);
                         JSONObject a_child = child_objs.getJSONObject(i);
                         String[] fields = new String[]{ "name","role"};
-                        View line =  findViewById(R.id.linlayout);
-
-
-
-                        //Context context = this.;
-
-                        hat.setText("29 bottles of beer on the wall,");
-
-
-                        hat.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-
-                        ((LinearLayout) line).addView(hat);
-
-
-                        TextView cloak = new TextView(getApplicationContext());
-                        cloak.setText("29 bottles of beer,");
-
-
-
-                        cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-
-                        ((LinearLayout) line).addView(cloak);
-
-                        /*for (int j = 0; j < 2; j++){
-                            TextView cloak = new TextView(this);
-                            cloak.setText(a_child.GetString);
-
-getApplicationContext();
-
+                        for (int j = 0; j < 2; j++){
+                          /*  TextView cloak = new TextView(getApplicationContext());
+                            cloak.setText(a_child.getString(fields[j]));
                             cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-
+                            cloak.setTextSize(30);
                             ((LinearLayout) line).addView(cloak);
+                            j++;
 
-                        }*/
+                            TextView zz = new TextView(getApplicationContext());
+                            zz.setText(a_child.getString(fields[j]));
+                            zz.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                            zz.setTextSize(30);
+                            ((LinearLayout) line).addView(zz);
+
+                            Button yy = new Button(getApplicationContext());
+                            yy.setText("Change Child Profile");
+
+
+
+                            yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                            ((LinearLayout) line).addView(yy); */
+
+                            TextView hat = new TextView(getApplicationContext());
+
+                            //Context context = this.;
+
+                            hat.setText("Course Title: ");
+                            hat.setTextSize(20);
+
+
+                            hat.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                            ((LinearLayout) line).addView(hat);
+
+
+                            TextView coat = new TextView(getApplicationContext());
+                            coat.setText("Section Name:");
+                            coat.setTextSize(20);
+
+
+                            coat.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                            ((LinearLayout) line).addView(coat);
+
+                            TextView a = new TextView(getApplicationContext());
+                            a.setText("Start Date: ");
+                            a.setTextSize(20);
+
+
+                            a.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                            ((LinearLayout) line).addView(a);
+
+                            TextView c = new TextView(getApplicationContext());
+                            c.setText("End Date: ");
+                            c.setTextSize(20);
+
+
+                            c.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                            ((LinearLayout) line).addView(c);
+
+
+                            TextView b = new TextView(getApplicationContext());
+                            b.setText("Time Slot: ");
+                            b.setTextSize(20);
+
+
+                            b.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                            ((LinearLayout) line).addView(b);
+
+                            TextView d = new TextView(getApplicationContext());
+                            d.setText("Capacity: ");
+                            d.setTextSize(20);
+
+
+                            d.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                            ((LinearLayout) line).addView(d);
+
+                            TextView e = new TextView(getApplicationContext());
+                            e.setText("Mentor Req: ");
+                            e.setTextSize(20);
+
+
+                            e.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                            ((LinearLayout) line).addView(e);
+
+                            TextView f = new TextView(getApplicationContext());
+                            f.setText("Mentee Req: ");
+                            f.setTextSize(20);
+
+
+                            f.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                            ((LinearLayout) line).addView(f);
+
+                            TextView g = new TextView(getApplicationContext());
+                            g.setText("Enrolled Mentor: ");
+                            g.setTextSize(20);
+
+
+                            g.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                            ((LinearLayout) line).addView(g);
+
+                            TextView h = new TextView(getApplicationContext());
+                            h.setText("Enrolled Mentee: ");
+                            h.setTextSize(20);
+
+
+                            h.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                            ((LinearLayout) line).addView(h);
+
+                            Button hh = new Button(getApplicationContext());
+                            hh.setText("Moderate as Moderator");
+
+
+
+                           hh.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                            ((LinearLayout) line).addView(hh);
+
+                            /*Button ii = new Button(getApplicationContext());
+                            ii.setText("Enroll as Mentee");
+
+
+
+                            ii.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                            ((LinearLayout) line).addView(ii);*/
+
+                            View linet = new View(getApplicationContext());
+                            linet.setBackgroundColor(getResources().getColor(android.R.color.black));
+                            linet.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,4));
+                            ((LinearLayout) line).addView(linet);
+
+
+                        }
                         System.out.println("**********CHILD*************");
                         System.out.println(a_child.getString("name"));
                         System.out.println(a_child.getString("role"));
