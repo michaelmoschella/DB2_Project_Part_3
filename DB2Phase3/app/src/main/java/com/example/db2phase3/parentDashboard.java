@@ -27,11 +27,12 @@ public class parentDashboard extends AppCompatActivity {
     private RequestQueue Q;
     private Button btnChangeProfile;
     private Button btnViewSections;
+    public the_global global;
 
     protected void onCreate(Bundle savedInstanceState) {
 
 
-        the_global global = new the_global();
+        global  = new the_global();
         Map<String, String> params = new HashMap<String, String>();
         System.out.println("BEFORE VOLLEY");
         System.out.println(global.active_id);
