@@ -1,8 +1,11 @@
 package com.example.db2phase3;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,19 +24,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class studentDashboard extends AppCompatActivity {
-
+    private Button btnViewSections;
     private RequestQueue Q;
     protected void onCreate(Bundle savedInstanceState) {
         the_global global = new the_global();
         Map<String, String> params = new HashMap<String, String>();
         System.out.println("BEFORE VOLLEY");
         System.out.println(global.active_id);
-        params.put("active_id", global.active_id.toString());
+        params.put("active_ID", global.active_id.toString());
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.parent_dash);
+        setContentView(R.layout.student_dash);
 
-        String url = "http://10.0.2.2/phase3/php_stuff/php/parent-dashboard.php";
+        btnViewSections = (Button) findViewById(R.id.s_dashboard6);
+        btnViewSections.setOnClickListener((v) -> {
+            Intent i = new Intent(studentDashboard.this, studentViewSections.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
+        });
+
+        String url = "http://10.0.2.2/phase3/php_stuff/php/student-dashboard.php";
         Q = Volley.newRequestQueue(getApplicationContext());
         StringRequest sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -44,36 +54,42 @@ public class studentDashboard extends AppCompatActivity {
                     String name = the_response.getString("name");
                     System.out.println(name);
                     String role = the_response.getString("role");
-                    JSONArray child_objs = the_response.getJSONArray("children");
-                    View line =  findViewById(R.id.p_dash);
-                    for (int i = 0; i < child_objs.length(); i++){
-                        View liner = new View(getApplicationContext());
-                        liner.setBackgroundColor(getResources().getColor(android.R.color.black));
-                        liner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,2));
-                        ((LinearLayout) line).addView(liner);
-                        JSONObject a_child = child_objs.getJSONObject(i);
-                        String[] fields = new String[]{ "name","role"};
-                        for (int j = 0; j < 2; j++){
-                            TextView cloak = new TextView(getApplicationContext());
-                            cloak.setText(a_child.getString(fields[j]));
-                            cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                            cloak.setTextSize(30);
-                            ((LinearLayout) line).addView(cloak);
-                        }
-                        System.out.println("**********CHILD*************");
-                        System.out.println(a_child.getString("name"));
-                        System.out.println(a_child.getString("role"));
-                        System.out.println(a_child.getString("uid"));
+                    Integer grade = the_response.getInt("grade");
+                    TextView grade_view = findViewById(R.id.grade_view);
+                    grade_view.setText("Your grade is: " + grade.toString());
+                    TextView user_view = findViewById(R.id.s_dashboard1);
+                    user_view.setText("User: " + name);
+                    TextView role_view = findViewById(R.id.s_dashboard2);
+                    role_view.setText("Role: Student");
+
+                    user_view = findViewById(R.id.s_dashboard4);
+                    user_view.setText("User: " + name);
+                    role_view = findViewById(R.id.s_dashboard5);
+                    role_view.setText("Role: Student");
+
+                    user_view = findViewById(R.id.s_dashboard7);
+                    user_view.setText("User: " + name);
+
+                    View line =  findViewById(R.id.s_dash);
+                    if (role == "Mentor") {
+                        TextView cloak = new TextView(getApplicationContext());
+                        cloak.setText("User: " + name);
+                        cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                        cloak.setTextSize(30);
+                        ((LinearLayout) line).addView(cloak);
+
+                        cloak = new TextView(getApplicationContext());
+                        cloak.setText("User: " + name);
+                        cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                        cloak.setTextSize(30);
+                        ((LinearLayout) line).addView(cloak);
+
+                        Button mentor_btn = new Button(getApplicationContext());
+                        mentor_btn.setText("View Mentor");
+                        mentor_btn.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                        ((LinearLayout) line).addView(mentor_btn);
+
                     }
-                    /*LinearLayout linearLayout = (LinearLayout)findViewById(R.id.info);
-                    TextView valueTV = new TextView(this);
-                    valueTV.setText("hallo hallo");
-                    valueTV.setId(5);
-                    valueTV.setLayoutParams(new LayoutParams(
-                            LayoutParams.FILL_PARENT,
-                            LayoutParams.WRAP_CONTENT));*/
-
-
                 } catch (JSONException e) {
                     System.out.println("JSON error");
                 }
@@ -96,5 +112,4 @@ public class studentDashboard extends AppCompatActivity {
         Q.add(sr);
 
     }
-
 }

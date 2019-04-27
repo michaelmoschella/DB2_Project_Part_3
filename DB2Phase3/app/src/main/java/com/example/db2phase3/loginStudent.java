@@ -59,8 +59,11 @@ public class loginStudent extends AppCompatActivity {
                     int status = the_response.getInt("status");
                     System.out.println(status);
                     if (status == 1) {
+                        the_global global = new the_global();
+                        global.active_id = the_response.getInt("uid");
+                        System.out.println(global.active_id);
                         // Change this to parent dashboard
-                        Intent i = new Intent(loginStudent.this, MainActivity.class);
+                        Intent i = new Intent(loginStudent.this, studentDashboard.class);
                         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(i);
                     } else {

@@ -2,139 +2,118 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
-        android:id="@+id/s_dash"
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Student Dashboard"
-            android:textSize="45dp"></TextView>
-
-        <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Your grade is grade."
-            android:textSize="30dp"></TextView>
-
-        <Button
-            android:id="@+id/s_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            android:textSize="20dp"></Button>
-
-        <View
-
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/s_dash"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/black" />
-
-        <TextView
-            android:id="@+id/s_dashboard1"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="User"
-            android:textSize="30dp"></TextView>
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/s_dashboard2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Profile"
-            android:textSize="30dp"></TextView>
 
-        <Button
-            android:id="@+id/s_dashboard3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Change your profile"
-            android:textSize="20dp"></Button>
+            <TextView
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/black" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Student Dashboard"
+                android:textSize="45dp"></TextView>
 
-        <TextView
-            android:id="@+id/s_dashboard4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Student"
-            android:textSize="30dp"></TextView>
+            <TextView
+                android:id="@+id/grade_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Placeholder"
+                android:textSize="30dp"></TextView>
 
-        <TextView
-            android:id="@+id/s_dashboard5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Section"
-            android:textSize="30dp"></TextView>
+            <Button
+                android:id="@+id/s_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:textSize="20dp"></Button>
 
-        <Button
-            android:id="@+id/s_dashboard6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="View Sections"
-            android:textSize="20dp"></Button>
+            <View
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/black" />
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black" />
 
-        <TextView
-            android:id="@+id/s_dashboard7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mentor"
-            android:textSize="30dp"></TextView>
+            <TextView
+                android:id="@+id/s_dashboard1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Placeholder"
+                android:textSize="30dp"></TextView>
 
-        <TextView
-            android:id="@+id/s_dashboard8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mentor"
-            android:textSize="30dp"></TextView>
+            <TextView
+                android:id="@+id/s_dashboard2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="30dp"></TextView>
 
-        <Button
-            android:id="@+id/s_dashboard9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="View Mentor"
-            android:textSize="20dp"></Button>
+            <Button
+                android:id="@+id/s_dashboard3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change your profile"
+                android:textSize="20dp"></Button>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/black" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black" />
 
-        <TextView
-            android:id="@+id/s_dashboard10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mentee"
-            android:textSize="30dp"></TextView>
+            <TextView
+                android:id="@+id/s_dashboard4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Student"
+                android:textSize="30dp"></TextView>
 
-        <TextView
-            android:id="@+id/s_dashboard11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mentee"
-            android:textSize="30dp"></TextView>
+            <TextView
+                android:id="@+id/s_dashboard5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Section"
+                android:textSize="30dp"></TextView>
 
-        <Button
-            android:id="@+id/s_dashboard12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="View Mentee"
-            android:textSize="20dp"></Button>
-    </LinearLayout>
+            <Button
+                android:id="@+id/s_dashboard6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View Sections"
+                android:textSize="20dp"></Button>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/s_dashboard7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Placeholder"
+                android:textSize="30dp"></TextView>
+
+            <TextView
+                android:id="@+id/s_dashboard8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Student"
+                android:textSize="30dp"></TextView>
+
+            <Button
+                android:id="@+id/s_dashboard9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View Moderator Info"
+                android:textSize="20dp"></Button>
+        </LinearLayout>
+    </ScrollView>
 
 
 </android.support.constraint.ConstraintLayout>
