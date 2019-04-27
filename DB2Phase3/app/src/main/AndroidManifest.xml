@@ -29,6 +29,7 @@
         <activity android:name=".loginStudent"/>
         <activity android:name=".parentDashboard"/>
         <activity android:name=".ChangeParentProfile"/>
+        <activity android:name=".viewSectionsParent"/>
 
     </application>
 

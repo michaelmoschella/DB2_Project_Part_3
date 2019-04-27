@@ -26,6 +26,7 @@ public class parentDashboard extends AppCompatActivity {
 
     private RequestQueue Q;
     private Button btnChangeProfile;
+    private Button btnViewSections;
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -43,6 +44,12 @@ public class parentDashboard extends AppCompatActivity {
         btnChangeProfile.setOnClickListener((v)->{
             System.out.println(" Change Parent Profile View");
             Intent i = new Intent(this, ChangeParentProfile.class);
+            startActivity(i);
+        });
+        btnViewSections = (Button) findViewById(R.id.p_dashboard9);
+        btnViewSections.setOnClickListener((v)->{
+            System.out.println(" View Sections");
+            Intent i = new Intent(this, viewSectionsParent.class);
             startActivity(i);
         });
         String url = "http://10.0.2.2/phase3/php_stuff/php/parent-dashboard.php";
