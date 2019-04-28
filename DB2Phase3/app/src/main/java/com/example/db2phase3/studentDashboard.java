@@ -25,6 +25,7 @@ import java.util.Map;
 
 public class studentDashboard extends AppCompatActivity {
     private Button btnViewSections;
+    private Button btnSChangeProfile;
     private RequestQueue Q;
     protected void onCreate(Bundle savedInstanceState) {
         the_global global = new the_global();
@@ -39,6 +40,12 @@ public class studentDashboard extends AppCompatActivity {
         btnViewSections = (Button) findViewById(R.id.s_dashboard6);
         btnViewSections.setOnClickListener((v) -> {
             Intent i = new Intent(studentDashboard.this, studentViewSections.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
+        });
+        btnSChangeProfile = (Button) findViewById(R.id.s_dashboard3);
+        btnSChangeProfile.setOnClickListener((v) -> {
+            Intent i = new Intent(studentDashboard.this, studentChangeProfile.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
         });
@@ -71,7 +78,13 @@ public class studentDashboard extends AppCompatActivity {
                     user_view.setText("User: " + name);
 
                     View line =  findViewById(R.id.s_dash);
-                    if (role == "Mentor") {
+
+                    if (role.equals("Mentor") || role.equals("Both")) {
+                        View liner = new View(getApplicationContext());
+                        liner.setBackgroundColor(getResources().getColor(android.R.color.black));
+                        liner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,5));
+
+                        ((LinearLayout) line).addView(liner);
                         TextView cloak = new TextView(getApplicationContext());
                         cloak.setText("User: " + name);
                         cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -86,7 +99,12 @@ public class studentDashboard extends AppCompatActivity {
 
                         Button mentor_btn = new Button(getApplicationContext());
                         mentor_btn.setText("View Mentor");
-                        mentor_btn.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                        mentor_btn.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                        mentor_btn.setOnClickListener((v) -> {
+                            Intent i = new Intent(studentDashboard.this, viewMentor.class);
+                            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(i);
+                        });
                         ((LinearLayout) line).addView(mentor_btn);
 
                     }

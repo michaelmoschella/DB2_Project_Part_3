@@ -38,7 +38,8 @@
         <!-- Enter Mike's Activities Above Here -->
 
         <!-- Enter Ross' Activities Below Here-->
-
+        <activity android:name=".viewMentor"/>
+        <activity android:name=".studentChangeProfile"/>
         <!-- Enter Ross' Activities Above Here -->
 
     </application>

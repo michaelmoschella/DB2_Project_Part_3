@@ -7,64 +7,17 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     >
 
-
-
     <LinearLayout
+        android:id="@+id/s_change"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
         <TextView
+            android:id="@+id/scp2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Change your profile as student user"
+            android:text="Change your profile"
             android:textSize="30dp"></TextView>
-
-        <EditText
-            android:id="@+id/EditText5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Name" ></EditText>
-
-        <EditText
-            android:id="@+id/EditText3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Password" ></EditText>
-
-        <EditText
-            android:id="@+id/EditText4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Confirm Password"></EditText>
-
-
-
-
-
-        <EditText
-            android:id="@+id/EditText6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Phone Number" ></EditText>
-
-        <EditText
-            android:id="@+id/EditText7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="City" ></EditText>
-
-        <EditText
-            android:id="@+id/EditText8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="State"></EditText>
-
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Submit"/>
 
     </LinearLayout>
 
