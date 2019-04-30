@@ -89,7 +89,11 @@ public class parentDashboard extends AppCompatActivity {
 
                             Button yy = new Button(getApplicationContext());
                             yy.setText("Change Child Profile");
-
+                            yy.setOnClickListener((v)->{
+                                System.out.println(" Change Child Profile");
+                                Intent d = new Intent(getApplicationContext(), ChangeChildProfile.class);
+                                startActivity(d);
+                            });
 
 
                             yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));

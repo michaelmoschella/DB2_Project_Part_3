@@ -37,6 +37,7 @@
         <activity android:name=".parentDashboard"/>
         <activity android:name=".ChangeParentProfile"/>
         <activity android:name=".viewSectionsParent"/>
+        <activity android:name=".ChangeChildProfile"/>
         <!-- Enter Mike's Activities Above Here -->
 
         <!-- Enter Ross' Activities Below Here-->

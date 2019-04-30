@@ -82,20 +82,31 @@ public class viewSectionsParent extends AppCompatActivity {
                             }
                             ((LinearLayout) line).addView(cloak);
                         }
-                        int or_status = a_section.getInt("or_status");
+
+                        System.out.println("HERE1");
+                        int or_status = a_section.getInt("moderator_status");
+                        System.out.println("status = "+or_status);
                         if (or_status == 1) {
+                            System.out.println("HERE3");
                             Button yy = new Button(getApplicationContext());
-                            yy.setText("Teach as Mentor");
+                            System.out.println("HERE4");
+                            yy.setText("Moderate as Moderator");
+                            System.out.println("HERE5");
                             yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                            System.out.println("HERE6");
                             ((LinearLayout) line).addView(yy);
+                            System.out.println("HERE7");
                             yy.setOnClickListener((v) -> {
+                                System.out.println("HERE8");
                                 Map<String, String> inner_params = new HashMap<String, String>();
+                                System.out.println("HERE9");
                                 inner_params.put("active_ID", global.active_id.toString());
+                                System.out.println("HERE10");
                                 try {
                                     inner_params.put("cID", a_section.getString("cID"));
                                     inner_params.put("secID", a_section.getString("secID"));
                                 } catch (JSONException e){
-                                    System.out.println("JSON error");
+                                    System.out.println("JSON error1");
                                 }
                                 String url = "http://10.0.2.2/phase3/php_stuff/php/enroll-mentor.php";
                                 StringRequest inner_sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
@@ -114,7 +125,7 @@ public class viewSectionsParent extends AppCompatActivity {
                                             }
 
                                         } catch (JSONException e) {
-                                            System.out.println("JSON error");
+                                            System.out.println("JSON error2");
                                         }
                                     }
                                 }, new Response.ErrorListener() {
@@ -134,114 +145,34 @@ public class viewSectionsParent extends AppCompatActivity {
                             });
                         } else if ( or_status == -1) {
                             TextView cloak = new TextView(getApplicationContext());
-                            cloak.setText("Time conflict, cannot mentor");
+                            cloak.setText("Section ended, cannot moderate");
                             cloak.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
                             cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                             ((LinearLayout) line).addView(cloak);
                         } else if ( or_status == -2) {
                             TextView cloak = new TextView(getApplicationContext());
-                            cloak.setText("Section full, cannot mentor");
-                            cloak.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                            cloak.setText("already moderating");
+                            cloak.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
                             cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                             ((LinearLayout) line).addView(cloak);
                         } else if ( or_status == -3) {
                             TextView cloak = new TextView(getApplicationContext());
-                            cloak.setText("Currently Teaching");
-                            cloak.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
+                            cloak.setText("Moderated by user:" + a_section.getString("moderator"));
+                            cloak.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
                             cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                             ((LinearLayout) line).addView(cloak);
                         } else {
                             TextView cloak = new TextView(getApplicationContext());
-                            cloak.setText("Cannot mentor");
+                            cloak.setText("Cannot moderate");
                             cloak.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
                             cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                             ((LinearLayout) line).addView(cloak);
                         }
 
-                        int ee_status = a_section.getInt("ee_status");
-                        if (ee_status == 1) {
-                            Button yy = new Button(getApplicationContext());
-                            yy.setText("Learn as Mentee");
-                            yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                            ((LinearLayout) line).addView(yy);
-                            yy.setOnClickListener((v) -> {
-                                Map<String, String> inner_params = new HashMap<String, String>();
-                                inner_params.put("active_ID", global.active_id.toString());
-                                try {
-                                    inner_params.put("cID", a_section.getString("cID"));
-                                    inner_params.put("secID", a_section.getString("secID"));
-                                } catch (JSONException e){
-                                    System.out.println("JSON error");
-                                }
-                                String url = "http://10.0.2.2/phase3/php_stuff/php/enroll-mentee.php";
-                                StringRequest inner_sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-                                    @Override
-                                    public void onResponse(String inner_response) {
-                                        System.out.println(inner_response);
-                                        try {
-                                            JSONObject the_inner_response = new JSONObject(inner_response);
-                                            int inner_status = the_inner_response.getInt("status");
 
-                                            if (inner_status == 1) {
-                                                Intent inner_i = new Intent(viewSectionsParent.this, studentViewSections.class);
-                                                startActivity(inner_i);
-                                            } else {
-
-                                            }
-
-                                        } catch (JSONException e) {
-                                            System.out.println("JSON error");
-                                        }
-                                    }
-                                }, new Response.ErrorListener() {
-                                    @Override
-                                    public void onErrorResponse(VolleyError error) {
-                                        System.out.println(error.toString());
-                                    }
-
-                                }) {
-                                    @Override
-                                    protected Map<String, String> getParams() {
-                                        return inner_params;
-                                    }
-                                };
-                                inner_sr.setShouldCache(false);
-                                Q.add(inner_sr);
-                            });
-                        } else if ( ee_status == -1) {
-                            TextView cloak = new TextView(getApplicationContext());
-                            cloak.setText("Time conflict, cannot enroll as mentee");
-                            cloak.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
-                            cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                            ((LinearLayout) line).addView(cloak);
-                        } else if ( ee_status == -2) {
-                            TextView cloak = new TextView(getApplicationContext());
-                            cloak.setText("Section full, cannot enroll as mentee");
-                            cloak.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
-                            cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                            ((LinearLayout) line).addView(cloak);
-                        } else if ( ee_status == -3) {
-                            TextView cloak = new TextView(getApplicationContext());
-                            cloak.setText("Currently enrolled as mentee");
-                            cloak.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
-                            cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                            ((LinearLayout) line).addView(cloak);
-                        } else if ( ee_status == -5) {
-                            TextView cloak = new TextView(getApplicationContext());
-                            cloak.setText("Section full, cannot enroll as mentee");
-                            cloak.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
-                            cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                            ((LinearLayout) line).addView(cloak);
-                        } else {
-                            TextView cloak = new TextView(getApplicationContext());
-                            cloak.setText("Cannot enroll as mentee");
-                            cloak.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
-                            cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                            ((LinearLayout) line).addView(cloak);
-                        }
                     }
                 } catch (JSONException e) {
-                    System.out.println("JSON error");
+                    System.out.println("JSON error3");
                 }
             }
         }, new Response.ErrorListener() {
