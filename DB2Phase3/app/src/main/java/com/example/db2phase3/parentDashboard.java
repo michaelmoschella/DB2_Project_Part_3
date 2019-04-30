@@ -27,6 +27,7 @@ public class parentDashboard extends AppCompatActivity {
     private RequestQueue Q;
     private Button btnChangeProfile;
     private Button btnViewSections;
+    private Button btnLogout;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +39,17 @@ public class parentDashboard extends AppCompatActivity {
         System.out.println(global.active_id);
         params.put("active_id", global.active_id.toString());
 
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parent_dash);
+
+
+        btnLogout = (Button) findViewById(R.id.d_logout);
+        btnLogout.setOnClickListener((v)->{
+            Intent i = new Intent(parentDashboard.this, MainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
+        });
 
         btnChangeProfile = (Button) findViewById(R.id.p_dashboard3);
         btnChangeProfile.setOnClickListener((v)->{
@@ -92,7 +102,16 @@ public class parentDashboard extends AppCompatActivity {
                             yy.setOnClickListener((v)->{
                                 System.out.println(" Change Child Profile");
                                 Intent d = new Intent(getApplicationContext(), ChangeChildProfile.class);
+                                try {
+                                    global.child_id = a_child.getInt("uid");
+                                } catch (JSONException e) {
+                                    System.out.println("bad");
+                                }
+
+
                                 startActivity(d);
+
+
                             });
 
 

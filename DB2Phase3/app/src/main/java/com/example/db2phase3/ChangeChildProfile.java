@@ -31,10 +31,10 @@ public class ChangeChildProfile extends AppCompatActivity {
         the_global global = new the_global();
         Map<String, String> params = new HashMap<String, String>();
         params.put("active_ID", global.active_id.toString());
-
+        params.put("cID", global.child_id.toString());
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.parent_change_profile);
+        setContentView(R.layout.change_child_profile);
 
         Map<String, String> the_params = params;
         String url = "http://10.0.2.2/phase3/php_stuff/php/change-c-profile.php";
@@ -45,7 +45,7 @@ public class ChangeChildProfile extends AppCompatActivity {
                 System.out.println(response);
                 try {
                     JSONObject the_response = new JSONObject(response);
-                    View line = findViewById(R.id.p_change);
+                    View line = findViewById(R.id.c_change);
                     String[] fields = new String[]{"Name", "Username", "Password", "Confirm_Password", "Email", "Phone", "Role"};
                     EditText edit_name = new EditText(getApplicationContext());
                     EditText edit_username = new EditText(getApplicationContext());
@@ -85,6 +85,9 @@ public class ChangeChildProfile extends AppCompatActivity {
                             inner_params.put(fields[i], ets[i].getText().toString());
                         }
                         inner_params.put("active_ID", global.active_id.toString());
+                        System.out.print(global.child_id.toString());
+                        inner_params.put("c_ID", global.child_id.toString());
+
                         String url = "http://10.0.2.2/phase3/php_stuff/php/c-profile-altered.php";
                         StringRequest inner_sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                             @Override
@@ -104,7 +107,7 @@ public class ChangeChildProfile extends AppCompatActivity {
                                     }
 
                                 } catch (JSONException e) {
-                                    System.out.println("JSON error");
+                                    System.out.println("JSON error1");
                                 }
                             }
                         }, new Response.ErrorListener() {
@@ -125,7 +128,7 @@ public class ChangeChildProfile extends AppCompatActivity {
                     });
 
                 } catch (JSONException e) {
-                    System.out.println("JSON error");
+                    System.out.println("JSON error2");
                 }
             }
         }, new Response.ErrorListener() {
