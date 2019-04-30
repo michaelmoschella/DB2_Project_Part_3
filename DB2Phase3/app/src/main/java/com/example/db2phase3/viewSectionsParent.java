@@ -24,6 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 import android.text.SpannableStringBuilder;
 import android.text.Spannable;
+import android.widget.Toast;
 
 public class viewSectionsParent extends AppCompatActivity {
     private Button btnLogout;
@@ -108,7 +109,7 @@ public class viewSectionsParent extends AppCompatActivity {
                                 } catch (JSONException e){
                                     System.out.println("JSON error1");
                                 }
-                                String url = "http://10.0.2.2/phase3/php_stuff/php/enroll-mentor.php";
+                                String url = "http://10.0.2.2/phase3/php_stuff/php/add-moderator.php";
                                 StringRequest inner_sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                                     @Override
                                     public void onResponse(String inner_response) {
@@ -118,8 +119,9 @@ public class viewSectionsParent extends AppCompatActivity {
                                             int inner_status = the_inner_response.getInt("status");
 
                                             if (inner_status == 1) {
-                                                Intent inner_i = new Intent(viewSectionsParent.this, studentViewSections.class);
+                                                Intent inner_i = new Intent(viewSectionsParent.this, viewSectionsParent.class);
                                                 startActivity(inner_i);
+                                                Toast.makeText(getApplicationContext(),"Congratulations, you are now moderating this course!", Toast.LENGTH_LONG).show();
                                             } else {
 
                                             }
