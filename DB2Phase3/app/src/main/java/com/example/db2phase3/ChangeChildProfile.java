@@ -22,7 +22,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ChangeParentProfile extends AppCompatActivity {
+public class ChangeChildProfile extends AppCompatActivity {
     private Button btnSubmit;
     private Button btnMain;
     private RequestQueue Q;
@@ -37,7 +37,7 @@ public class ChangeParentProfile extends AppCompatActivity {
         setContentView(R.layout.parent_change_profile);
 
         Map<String, String> the_params = params;
-        String url = "http://10.0.2.2/phase3/php_stuff/php/change-p-profile.php";
+        String url = "http://10.0.2.2/phase3/php_stuff/php/change-c-profile.php";
         Q = Volley.newRequestQueue(getApplicationContext());
         StringRequest sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -85,7 +85,7 @@ public class ChangeParentProfile extends AppCompatActivity {
                             inner_params.put(fields[i], ets[i].getText().toString());
                         }
                         inner_params.put("active_ID", global.active_id.toString());
-                        String url = "http://10.0.2.2/phase3/php_stuff/php/p-profile-altered.php";
+                        String url = "http://10.0.2.2/phase3/php_stuff/php/c-profile-altered.php";
                         StringRequest inner_sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                             @Override
                             public void onResponse(String inner_response) {
@@ -97,7 +97,7 @@ public class ChangeParentProfile extends AppCompatActivity {
                                     int inner_status = the_inner_response.getInt("status");
 
                                     if (inner_status == 1) {
-                                        Intent inner_i = new Intent(ChangeParentProfile.this, parentDashboard.class);
+                                        Intent inner_i = new Intent(ChangeChildProfile.this, parentDashboard.class);
                                         startActivity(inner_i);
                                     } else {
 

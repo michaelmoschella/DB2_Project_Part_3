@@ -10,6 +10,7 @@
 
 
     <LinearLayout
+        android:id="@+id/p_change"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -20,72 +21,72 @@
             android:text="Change your profile as parent user"
             android:textSize="30dp"></TextView>
 
-        <EditText
-            android:id="@+id/EditText5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Name" ></EditText>
+        <!-- <EditText
+             android:id="@+id/EditText5"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:hint="Name" ></EditText>
 
-        <EditText
-            android:id="@+id/EditText9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Username" ></EditText>
+         <EditText
+             android:id="@+id/EditText9"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:hint="Username" ></EditText>
 
-        <EditText
-            android:id="@+id/EditText3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Password" ></EditText>
+         <EditText
+             android:id="@+id/EditText3"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:hint="Password" ></EditText>
 
-        <EditText
-            android:id="@+id/EditText4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Confirm Password"></EditText>
-
-
-        <EditText
-            android:id="@+id/EditText10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Email"></EditText>
+         <EditText
+             android:id="@+id/EditText4"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:hint="Confirm Password"></EditText>
 
 
+         <EditText
+             android:id="@+id/EditText10"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:hint="Email"></EditText>
 
 
-        <EditText
-            android:id="@+id/EditText6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Phone Number" ></EditText>
 
-        <EditText
-            android:id="@+id/EditText7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="City" ></EditText>
 
-        <EditText
-            android:id="@+id/EditText8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="State"></EditText>
+         <EditText
+             android:id="@+id/EditText6"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:hint="Phone Number" ></EditText>
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Submit"/>
+         <EditText
+             android:id="@+id/EditText7"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:hint="City" ></EditText>
 
-        <Spinner
-            android:id="@+id/spin1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
-            android:entries="@array/p_role"
-            />
+         <EditText
+             android:id="@+id/EditText8"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:hint="State"></EditText>
+
+         <Button
+             android:id="@+id/button1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Submit"/>
+
+         <Spinner
+             android:id="@+id/spin1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@android:drawable/btn_dropdown"
+             android:spinnerMode="dropdown"
+             android:entries="@array/p_role"
+             />-->
 
     </LinearLayout>
 
