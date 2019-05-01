@@ -24,6 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class studentDashboard extends AppCompatActivity {
+    private Button btnViewSessions;
     private Button btnViewSections;
     private Button btnSChangeProfile;
     private RequestQueue Q;
@@ -36,6 +37,14 @@ public class studentDashboard extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student_dash);
+
+
+        btnViewSessions = (Button) findViewById(R.id.s_dashboard9);
+        btnViewSessions.setOnClickListener((v) -> {
+            Intent i = new Intent(studentDashboard.this, studentViewSessions.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
+        });
 
         btnViewSections = (Button) findViewById(R.id.s_dashboard6);
         btnViewSections.setOnClickListener((v) -> {

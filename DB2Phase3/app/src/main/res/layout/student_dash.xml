@@ -12,7 +12,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
             <TextView
 
                 android:layout_width="wrap_content"
@@ -96,22 +95,23 @@
                 android:id="@+id/s_dashboard7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Placeholder"
+                android:text="Student"
                 android:textSize="30dp"></TextView>
 
             <TextView
                 android:id="@+id/s_dashboard8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Student"
+                android:text="Section"
                 android:textSize="30dp"></TextView>
 
             <Button
                 android:id="@+id/s_dashboard9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="View Moderator Info"
+                android:text="View Sessions As Mentor"
                 android:textSize="20dp"></Button>
+
         </LinearLayout>
     </ScrollView>
 
