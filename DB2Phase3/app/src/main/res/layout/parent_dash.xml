@@ -109,6 +109,32 @@
                 android:text="View Sections"
                 android:textSize="20dp"></Button>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/p_dashboard30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parent"
+                android:textSize="30dp"></TextView>
+
+            <TextView
+                android:id="@+id/p_dashboard31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sessions"
+                android:textSize="30dp"></TextView>
+
+            <Button
+                android:id="@+id/p_dashboard32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View Sessions"
+                android:textSize="20dp"></Button>
+
         </LinearLayout>
 
     </ScrollView>
