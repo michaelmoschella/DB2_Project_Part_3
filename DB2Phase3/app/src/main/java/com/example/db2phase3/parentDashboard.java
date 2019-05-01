@@ -27,6 +27,7 @@ public class parentDashboard extends AppCompatActivity {
     private RequestQueue Q;
     private Button btnChangeProfile;
     private Button btnViewSections;
+    private Button btnViewSessions;
     private Button btnLogout;
 
 
@@ -63,6 +64,13 @@ public class parentDashboard extends AppCompatActivity {
             Intent i = new Intent(this, viewSectionsParent.class);
             startActivity(i);
         });
+        btnViewSessions = (Button) findViewById(R.id.p_dashboard32);
+        btnViewSessions.setOnClickListener((v)->{
+            System.out.println(" View Sessions");
+            Intent i = new Intent(this, ParentViewSessions.class);
+            startActivity(i);
+        });
+
         String url = "http://10.0.2.2/phase3/php_stuff/php/parent-dashboard.php";
         Q = Volley.newRequestQueue(getApplicationContext());
         StringRequest sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
