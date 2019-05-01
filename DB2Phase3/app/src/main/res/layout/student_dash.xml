@@ -27,7 +27,7 @@
                 android:textSize="30dp"></TextView>
 
             <Button
-                android:id="@+id/s_logout"
+                android:id="@+id/logout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Logout"
@@ -95,14 +95,14 @@
                 android:id="@+id/s_dashboard7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Student"
+                android:text="Placeholder"
                 android:textSize="30dp"></TextView>
 
             <TextView
                 android:id="@+id/s_dashboard8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Section"
+                android:text="Mentor"
                 android:textSize="30dp"></TextView>
 
             <Button
@@ -110,6 +110,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="View Sessions As Mentor"
+                android:textSize="20dp"></Button>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/s_dashboard10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Placeholder"
+                android:textSize="30dp"></TextView>
+
+            <TextView
+                android:id="@+id/s_dashboard11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mentee"
+                android:textSize="30dp"></TextView>
+
+            <Button
+                android:id="@+id/s_dashboard12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View Sessions As Mentee"
                 android:textSize="20dp"></Button>
 
         </LinearLayout>

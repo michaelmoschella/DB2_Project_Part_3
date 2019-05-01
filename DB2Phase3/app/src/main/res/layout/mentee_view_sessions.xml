@@ -3,4 +3,29 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/s_sessions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/s_dashboard7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View Sessions as Mentee"
+                android:textSize="30dp"></TextView>
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:textSize="20dp"></Button>
+        </LinearLayout>
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

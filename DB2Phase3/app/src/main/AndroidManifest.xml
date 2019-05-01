@@ -41,6 +41,7 @@
         <!-- Enter Mike's Activities Above Here -->
 
         <!-- Enter Ross' Activities Below Here-->
+        <activity android:name=".menteeViewSessions"/>
         <activity android:name=".studentViewSessions"/>
         <activity android:name=".viewMentor"/>
         <activity android:name=".studentChangeProfile"/>

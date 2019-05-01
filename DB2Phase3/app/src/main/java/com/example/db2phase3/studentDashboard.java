@@ -24,9 +24,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class studentDashboard extends AppCompatActivity {
+    private Button btnMenteeViewSessions;
     private Button btnViewSessions;
     private Button btnViewSections;
     private Button btnSChangeProfile;
+    private Button btnLogout;
     private RequestQueue Q;
     protected void onCreate(Bundle savedInstanceState) {
         the_global global = new the_global();
@@ -38,6 +40,12 @@ public class studentDashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student_dash);
 
+        btnMenteeViewSessions = (Button) findViewById(R.id.s_dashboard12);
+        btnMenteeViewSessions.setOnClickListener((v) -> {
+            Intent i = new Intent(studentDashboard.this, menteeViewSessions.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
+        });
 
         btnViewSessions = (Button) findViewById(R.id.s_dashboard9);
         btnViewSessions.setOnClickListener((v) -> {
@@ -55,6 +63,13 @@ public class studentDashboard extends AppCompatActivity {
         btnSChangeProfile = (Button) findViewById(R.id.s_dashboard3);
         btnSChangeProfile.setOnClickListener((v) -> {
             Intent i = new Intent(studentDashboard.this, studentChangeProfile.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
+        });
+        btnLogout = (Button) findViewById(R.id.logout);
+        btnLogout.setOnClickListener((v) -> {
+            System.out.println("WHYYYYYYYYY");
+            Intent i = new Intent(studentDashboard.this, MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
         });
