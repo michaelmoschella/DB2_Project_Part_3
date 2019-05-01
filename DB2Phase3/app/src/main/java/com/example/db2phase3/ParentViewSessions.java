@@ -46,7 +46,7 @@ public class ParentViewSessions extends AppCompatActivity {
             startActivity(i);
         });
 
-        String url = "http://10.0.2.2/phase3/php_stuff/php/student-view-sessions.php";
+        String url = "http://10.0.2.2/phase3/php_stuff/php/parent-view-sessions.php";
         Q = Volley.newRequestQueue(getApplicationContext());
         StringRequest sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
