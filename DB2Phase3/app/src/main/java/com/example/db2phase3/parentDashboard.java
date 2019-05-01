@@ -27,19 +27,29 @@ public class parentDashboard extends AppCompatActivity {
     private RequestQueue Q;
     private Button btnChangeProfile;
     private Button btnViewSections;
-    public the_global global;
+    private Button btnLogout;
+
 
     protected void onCreate(Bundle savedInstanceState) {
 
 
-        global  = new the_global();
+        the_global global = new the_global();
         Map<String, String> params = new HashMap<String, String>();
         System.out.println("BEFORE VOLLEY");
         System.out.println(global.active_id);
         params.put("active_id", global.active_id.toString());
 
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parent_dash);
+
+
+        btnLogout = (Button) findViewById(R.id.d_logout);
+        btnLogout.setOnClickListener((v)->{
+            Intent i = new Intent(parentDashboard.this, MainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
+        });
 
         btnChangeProfile = (Button) findViewById(R.id.p_dashboard3);
         btnChangeProfile.setOnClickListener((v)->{
@@ -89,7 +99,20 @@ public class parentDashboard extends AppCompatActivity {
 
                             Button yy = new Button(getApplicationContext());
                             yy.setText("Change Child Profile");
+                            yy.setOnClickListener((v)->{
+                                System.out.println(" Change Child Profile");
+                                Intent d = new Intent(getApplicationContext(), ChangeChildProfile.class);
+                                try {
+                                    global.child_id = a_child.getInt("uid");
+                                } catch (JSONException e) {
+                                    System.out.println("bad");
+                                }
 
+
+                                startActivity(d);
+
+
+                            });
 
 
                             yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
