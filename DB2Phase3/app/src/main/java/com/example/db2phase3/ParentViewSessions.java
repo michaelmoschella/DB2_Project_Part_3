@@ -58,6 +58,7 @@ public class ParentViewSessions extends AppCompatActivity {
                     JSONArray section_objs = the_response.getJSONArray("sections");
                     System.out.println(section_objs.length());
                     View line =  findViewById(R.id.p_sessions);
+                    System.out.println("HERE1");
                     for (int i = 0; i < section_objs.length(); i++){
                         View liner = new View(getApplicationContext());
                         liner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 100));
@@ -67,7 +68,7 @@ public class ParentViewSessions extends AppCompatActivity {
                         liner.setBackgroundColor(getResources().getColor(android.R.color.black));
                         liner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,10));
                         ((LinearLayout) line).addView(liner);
-
+                        System.out.println("HERE2");
                         JSONObject a_section = section_objs.getJSONObject(i);
                         String[] fields = new String[]{ "Course_Title", "Section_Name"};
                         for (int j = 0; j < fields.length; j++){
@@ -77,6 +78,7 @@ public class ParentViewSessions extends AppCompatActivity {
                             str.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), start, end, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
                             TextView cloak = new TextView(getApplicationContext());
                             cloak.setText(str);
+                            System.out.println("HERE3");
                             cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                             if (j == 0) {
                                 cloak.setTextSize(30);
@@ -91,7 +93,7 @@ public class ParentViewSessions extends AppCompatActivity {
                             liner = new View(getApplicationContext());
                             liner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 100));
                             ((LinearLayout) line).addView(liner);
-
+                            System.out.println("HERE4");
                             liner = new View(getApplicationContext());
                             liner.setBackgroundColor(getResources().getColor(android.R.color.black));
                             liner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,1));
@@ -117,28 +119,34 @@ public class ParentViewSessions extends AppCompatActivity {
                             }
 
 
-                            Button yy = new Button(getApplicationContext());
+                          /*  Button yy = new Button(getApplicationContext());
                             yy.setText("View Study Material");
                             yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                            ((LinearLayout) line).addView(yy);
+                            ((LinearLayout) line).addView(yy);*/
 
-
+                           /* System.out.println("HERE5");
                             int or_status = a_session.getInt("status");
+                            System.out.println("HERE55");
                             if (or_status == 1) {
+                                System.out.println("HERE555");
                                 yy = new Button(getApplicationContext());
+                                System.out.println("HERE5555");
                                 yy.setText("Participate as Mentee");
+                                System.out.println("HERE55555");
                                 yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                                 ((LinearLayout) line).addView(yy);
                                 yy.setOnClickListener((v) -> {
                                     Map<String, String> inner_params = new HashMap<String, String>();
                                     inner_params.put("active_ID", global.active_id.toString());
+                                    System.out.println("HERE6");
                                     try {
                                         inner_params.put("cID", a_session.getString("cID"));
                                         inner_params.put("secID", a_session.getString("secID"));
                                         inner_params.put("sesID", a_session.getString("sesID"));
                                     } catch (JSONException e){
-                                        System.out.println("JSON error");
+                                        System.out.println("JSON error1");
                                     }
+                                    System.out.println("HERE7");
                                     String url = "http://10.0.2.2/phase3/php_stuff/php/enroll-mentee-session.php";
                                     StringRequest inner_sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                                         @Override
@@ -156,7 +164,7 @@ public class ParentViewSessions extends AppCompatActivity {
                                                 }
 
                                             } catch (JSONException e) {
-                                                System.out.println("JSON error");
+                                                System.out.println("JSON error2");
                                             }
                                         }
                                     }, new Response.ErrorListener() {
@@ -194,16 +202,17 @@ public class ParentViewSessions extends AppCompatActivity {
                                 cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                                 ((LinearLayout) line).addView(cloak);
                             } else {
+                                System.out.println("HERE8");
                                 TextView cloak = new TextView(getApplicationContext());
                                 cloak.setText("Cannot mentor");
                                 cloak.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
                                 cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                                 ((LinearLayout) line).addView(cloak);
-                            }
+                            } */
                         }
                     }
                 } catch (JSONException e) {
-                    System.out.println("JSON error");
+                    System.out.println("JSON error3");
                 }
             }
         }, new Response.ErrorListener() {
