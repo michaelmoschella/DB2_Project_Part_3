@@ -41,6 +41,7 @@ public class ParentViewSessions extends AppCompatActivity {
 
         btnLogout = (Button) findViewById(R.id.the_logout);
         btnLogout.setOnClickListener((v) -> {
+            System.out.println("WHYYYYYYYYY");
             Intent i = new Intent(ParentViewSessions.this, MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
@@ -54,7 +55,8 @@ public class ParentViewSessions extends AppCompatActivity {
                 System.out.println(response);
                 try {
                     JSONObject the_response = new JSONObject(response);
-                    JSONArray section_objs = the_response.getJSONArray("mentor_sections");
+                    JSONArray section_objs = the_response.getJSONArray("sections");
+                    System.out.println(section_objs.length());
                     View line =  findViewById(R.id.s_sessions);
                     for (int i = 0; i < section_objs.length(); i++){
                         View liner = new View(getApplicationContext());
@@ -119,68 +121,25 @@ public class ParentViewSessions extends AppCompatActivity {
                             yy.setText("View Study Material");
                             yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                             ((LinearLayout) line).addView(yy);
-                            /*yy.setOnClickListener((v) -> {
-                                Map<String, String> inner_params = new HashMap<String, String>();
-                                inner_params.put("active_ID", global.active_id.toString());
-                                try {
-                                    inner_params.put("cID", a_section.getString("cID"));
-                                    inner_params.put("secID", a_section.getString("secID"));
-                                } catch (JSONException e){
-                                    System.out.println("JSON error");
-                                }
-                                String url = "http://10.0.2.2/phase3/php_stuff/php/enroll-mentee.php";
-                                StringRequest inner_sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-                                    @Override
-                                    public void onResponse(String inner_response) {
-                                        System.out.println(inner_response);
-                                        try {
-                                            JSONObject the_inner_response = new JSONObject(inner_response);
-                                            int inner_status = the_inner_response.getInt("status");
 
-                                            if (inner_status == 1) {
-                                                Intent inner_i = new Intent(studentViewSections.this, studentViewSections.class);
-                                                startActivity(inner_i);
-                                            } else {
-
-                                            }
-
-                                        } catch (JSONException e) {
-                                            System.out.println("JSON error");
-                                        }
-                                    }
-                                }, new Response.ErrorListener() {
-                                    @Override
-                                    public void onErrorResponse(VolleyError error) {
-                                        System.out.println(error.toString());
-                                    }
-
-                                }) {
-                                    @Override
-                                    protected Map<String, String> getParams() {
-                                        return inner_params;
-                                    }
-                                };
-                                inner_sr.setShouldCache(false);
-                                Q.add(inner_sr);
-                            });*/
 
                             int or_status = a_session.getInt("status");
                             if (or_status == 1) {
                                 yy = new Button(getApplicationContext());
-                                yy.setText("Participate as Mentor");
+                                yy.setText("Participate as Mentee");
                                 yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                                 ((LinearLayout) line).addView(yy);
-                               /* yy.setOnClickListener((v) -> {
+                                yy.setOnClickListener((v) -> {
                                     Map<String, String> inner_params = new HashMap<String, String>();
                                     inner_params.put("active_ID", global.active_id.toString());
                                     try {
-                                        inner_params.put("cID", a_section.getString("cID"));
-                                        inner_params.put("secID", a_section.getString("secID"));
-                                        inner_params.put("secID", a_section.getString("sesID"));
+                                        inner_params.put("cID", a_session.getString("cID"));
+                                        inner_params.put("secID", a_session.getString("secID"));
+                                        inner_params.put("sesID", a_session.getString("sesID"));
                                     } catch (JSONException e){
                                         System.out.println("JSON error");
                                     }
-                                    String url = "http://10.0.2.2/phase3/php_stuff/php/enroll-mentor.php";
+                                    String url = "http://10.0.2.2/phase3/php_stuff/php/enroll-mentee-session.php";
                                     StringRequest inner_sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                                         @Override
                                         public void onResponse(String inner_response) {
@@ -190,7 +149,7 @@ public class ParentViewSessions extends AppCompatActivity {
                                                 int inner_status = the_inner_response.getInt("status");
 
                                                 if (inner_status == 1) {
-                                                    Intent inner_i = new Intent(studentViewSections.this, studentViewSections.class);
+                                                    Intent inner_i = new Intent(ParentViewSessions.this, ParentViewSessions.class);
                                                     startActivity(inner_i);
                                                 } else {
 
@@ -214,16 +173,23 @@ public class ParentViewSessions extends AppCompatActivity {
                                     };
                                     inner_sr.setShouldCache(false);
                                     Q.add(inner_sr);
-                                });*/
+                                });
+
                             } else if ( or_status == -1) {
                                 TextView cloak = new TextView(getApplicationContext());
                                 cloak.setText("Currently participating");
-                                cloak.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                                cloak.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
                                 cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                                 ((LinearLayout) line).addView(cloak);
                             } else if ( or_status == -2) {
                                 TextView cloak = new TextView(getApplicationContext());
                                 cloak.setText("Session has ended");
+                                cloak.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                                cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                                ((LinearLayout) line).addView(cloak);
+                            } else if ( or_status == -3) {
+                                TextView cloak = new TextView(getApplicationContext());
+                                cloak.setText("Missed Thursday Deadline");
                                 cloak.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
                                 cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                                 ((LinearLayout) line).addView(cloak);
