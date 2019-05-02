@@ -57,7 +57,7 @@ public class ParentViewSessions extends AppCompatActivity {
                     JSONObject the_response = new JSONObject(response);
                     JSONArray section_objs = the_response.getJSONArray("sections");
                     System.out.println(section_objs.length());
-                    View line =  findViewById(R.id.s_sessions);
+                    View line =  findViewById(R.id.p_sessions);
                     for (int i = 0; i < section_objs.length(); i++){
                         View liner = new View(getApplicationContext());
                         liner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 100));
