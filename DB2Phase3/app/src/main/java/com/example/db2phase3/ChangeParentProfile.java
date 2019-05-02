@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -99,6 +100,7 @@ public class ChangeParentProfile extends AppCompatActivity {
                                     if (inner_status == 1) {
                                         Intent inner_i = new Intent(ChangeParentProfile.this, parentDashboard.class);
                                         startActivity(inner_i);
+                                        Toast.makeText(getApplicationContext(),"Congratulations, your profile has been changed!", Toast.LENGTH_LONG).show();
                                     } else {
 
                                     }

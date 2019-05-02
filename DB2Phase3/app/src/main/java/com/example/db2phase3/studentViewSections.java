@@ -24,6 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 import android.text.SpannableStringBuilder;
 import android.text.Spannable;
+import android.widget.Toast;
 
 public class studentViewSections extends AppCompatActivity {
     private Button btnLogout;
@@ -109,6 +110,7 @@ public class studentViewSections extends AppCompatActivity {
                                             if (inner_status == 1) {
                                                 Intent inner_i = new Intent(studentViewSections.this, studentViewSections.class);
                                                 startActivity(inner_i);
+                                                Toast.makeText(getApplicationContext(),"Congratulations, you have been enrolled as a mentor!", Toast.LENGTH_LONG).show();
                                             } else {
 
                                             }
@@ -185,6 +187,7 @@ public class studentViewSections extends AppCompatActivity {
                                             if (inner_status == 1) {
                                                 Intent inner_i = new Intent(studentViewSections.this, studentViewSections.class);
                                                 startActivity(inner_i);
+                                                Toast.makeText(getApplicationContext(),"Congratulations, you have been enrolled as a mentee!", Toast.LENGTH_LONG).show();
                                             } else {
 
                                             }

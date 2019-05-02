@@ -101,6 +101,9 @@ public class studentDashboard extends AppCompatActivity {
                     user_view = findViewById(R.id.s_dashboard7);
                     user_view.setText("User: " + name);
 
+                    user_view = findViewById(R.id.s_dashboard10);
+                    user_view.setText("User: " + name);
+
                     View line =  findViewById(R.id.s_dash);
 
                     if (role.equals("Mentor") || role.equals("Both")) {
@@ -116,7 +119,7 @@ public class studentDashboard extends AppCompatActivity {
                         ((LinearLayout) line).addView(cloak);
 
                         cloak = new TextView(getApplicationContext());
-                        cloak.setText("User: " + name);
+                        cloak.setText("Role: Mentor");
                         cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                         cloak.setTextSize(30);
                         ((LinearLayout) line).addView(cloak);

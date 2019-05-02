@@ -24,6 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 import android.text.SpannableStringBuilder;
 import android.text.Spannable;
+import android.widget.Toast;
 
 public class studentViewSessions extends AppCompatActivity {
     private Button btnLogout;
@@ -114,59 +115,9 @@ public class studentViewSessions extends AppCompatActivity {
                                 ((LinearLayout) line).addView(cloak);
                             }
 
-
-                            Button yy = new Button(getApplicationContext());
-                            yy.setText("View Study Material");
-                            yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                            ((LinearLayout) line).addView(yy);
-                            /*yy.setOnClickListener((v) -> {
-                                Map<String, String> inner_params = new HashMap<String, String>();
-                                inner_params.put("active_ID", global.active_id.toString());
-                                try {
-                                    inner_params.put("cID", a_section.getString("cID"));
-                                    inner_params.put("secID", a_section.getString("secID"));
-                                } catch (JSONException e){
-                                    System.out.println("JSON error");
-                                }
-                                String url = "http://10.0.2.2/phase3/php_stuff/php/enroll-mentee.php";
-                                StringRequest inner_sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-                                    @Override
-                                    public void onResponse(String inner_response) {
-                                        System.out.println(inner_response);
-                                        try {
-                                            JSONObject the_inner_response = new JSONObject(inner_response);
-                                            int inner_status = the_inner_response.getInt("status");
-
-                                            if (inner_status == 1) {
-                                                Intent inner_i = new Intent(studentViewSections.this, studentViewSections.class);
-                                                startActivity(inner_i);
-                                            } else {
-
-                                            }
-
-                                        } catch (JSONException e) {
-                                            System.out.println("JSON error");
-                                        }
-                                    }
-                                }, new Response.ErrorListener() {
-                                    @Override
-                                    public void onErrorResponse(VolleyError error) {
-                                        System.out.println(error.toString());
-                                    }
-
-                                }) {
-                                    @Override
-                                    protected Map<String, String> getParams() {
-                                        return inner_params;
-                                    }
-                                };
-                                inner_sr.setShouldCache(false);
-                                Q.add(inner_sr);
-                            });*/
-
                             int or_status = a_session.getInt("status");
                             if (or_status == 1) {
-                                yy = new Button(getApplicationContext());
+                                Button yy = new Button(getApplicationContext());
                                 yy.setText("Participate as Mentor");
                                 yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                                 ((LinearLayout) line).addView(yy);
@@ -192,6 +143,7 @@ public class studentViewSessions extends AppCompatActivity {
                                                 if (inner_status == 1) {
                                                     Intent inner_i = new Intent(studentViewSessions.this, studentViewSessions.class);
                                                     startActivity(inner_i);
+                                                    Toast.makeText(getApplicationContext(),"Congratulations, you have been enrolled as a mentor!", Toast.LENGTH_LONG).show();
                                                 } else {
 
                                                 }

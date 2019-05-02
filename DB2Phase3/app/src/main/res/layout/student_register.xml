@@ -36,12 +36,14 @@
             android:id="@+id/EditText3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:hint="Password" ></EditText>
 
         <EditText
             android:id="@+id/EditText4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:hint="Confirm Password"></EditText>
 
         <Spinner

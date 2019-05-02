@@ -24,6 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 import android.text.SpannableStringBuilder;
 import android.text.Spannable;
+import android.widget.Toast;
 
 public class menteeViewSessions extends AppCompatActivity {
     private Button btnLogout;
@@ -117,15 +118,9 @@ public class menteeViewSessions extends AppCompatActivity {
                             }
 
 
-                            Button yy = new Button(getApplicationContext());
-                            yy.setText("View Study Material");
-                            yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                            ((LinearLayout) line).addView(yy);
-
-
                             int or_status = a_session.getInt("status");
                             if (or_status == 1) {
-                                yy = new Button(getApplicationContext());
+                                Button yy = new Button(getApplicationContext());
                                 yy.setText("Participate as Mentee");
                                 yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                                 ((LinearLayout) line).addView(yy);
@@ -151,6 +146,7 @@ public class menteeViewSessions extends AppCompatActivity {
                                                 if (inner_status == 1) {
                                                     Intent inner_i = new Intent(menteeViewSessions.this, menteeViewSessions.class);
                                                     startActivity(inner_i);
+                                                    Toast.makeText(getApplicationContext(),"Congratulations, you have been enrolled as a mentee!", Toast.LENGTH_LONG).show();
                                                 } else {
 
                                                 }

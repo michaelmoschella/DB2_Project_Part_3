@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -31,7 +32,6 @@ public class studentChangeProfile extends AppCompatActivity {
         the_global global = new the_global();
         Map<String, String> params = new HashMap<String, String>();
         params.put("active_ID", global.active_id.toString());
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student_change_profile);
@@ -72,8 +72,6 @@ public class studentChangeProfile extends AppCompatActivity {
                         ((LinearLayout) line).addView(ets[i]);
                     }
 
-
-
                     Button yy = new Button(getApplicationContext());
                     yy.setText("Submit Changes");
                     yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -99,6 +97,7 @@ public class studentChangeProfile extends AppCompatActivity {
                                     if (inner_status == 1) {
                                         Intent inner_i = new Intent(studentChangeProfile.this, studentDashboard.class);
                                         startActivity(inner_i);
+                                        Toast.makeText(getApplicationContext(),"Congratulations, your profile has been changed!", Toast.LENGTH_LONG).show();
                                     } else {
 
                                     }
