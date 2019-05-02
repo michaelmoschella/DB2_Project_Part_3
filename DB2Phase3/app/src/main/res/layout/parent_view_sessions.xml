@@ -16,7 +16,7 @@
                 android:id="@+id/s_dashboard99"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="View Sessions as Mentor"
+                android:text="View Sessions as Parent"
                 android:textSize="30dp"></TextView>
 
             <Button

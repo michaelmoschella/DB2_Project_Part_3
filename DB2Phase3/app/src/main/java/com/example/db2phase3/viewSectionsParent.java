@@ -39,12 +39,12 @@ public class viewSectionsParent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.parent_sections_list);
 
-       /* btnLogout = (Button) findViewById(R.id.logout);
+        btnLogout = (Button) findViewById(R.id.logout);
         btnLogout.setOnClickListener((v) -> {
             Intent i = new Intent(viewSectionsParent.this, MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i);
-        });*/
+        });
 
         String url = "http://10.0.2.2/phase3/php_stuff/php/parent-view-sections.php";
         Q = Volley.newRequestQueue(getApplicationContext());

@@ -59,6 +59,7 @@ public class ParentViewSessions extends AppCompatActivity {
                     System.out.println(section_objs.length());
                     View line =  findViewById(R.id.p_sessions);
                     System.out.println("HERE1");
+                    System.out.println(section_objs.length());
                     for (int i = 0; i < section_objs.length(); i++){
                         View liner = new View(getApplicationContext());
                         liner.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 100));
@@ -117,98 +118,6 @@ public class ParentViewSessions extends AppCompatActivity {
                                 }
                                 ((LinearLayout) line).addView(cloak);
                             }
-
-
-                          /*  Button yy = new Button(getApplicationContext());
-                            yy.setText("View Study Material");
-                            yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                            ((LinearLayout) line).addView(yy);*/
-
-                           /* System.out.println("HERE5");
-                            int or_status = a_session.getInt("status");
-                            System.out.println("HERE55");
-                            if (or_status == 1) {
-                                System.out.println("HERE555");
-                                yy = new Button(getApplicationContext());
-                                System.out.println("HERE5555");
-                                yy.setText("Participate as Mentee");
-                                System.out.println("HERE55555");
-                                yy.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                                ((LinearLayout) line).addView(yy);
-                                yy.setOnClickListener((v) -> {
-                                    Map<String, String> inner_params = new HashMap<String, String>();
-                                    inner_params.put("active_ID", global.active_id.toString());
-                                    System.out.println("HERE6");
-                                    try {
-                                        inner_params.put("cID", a_session.getString("cID"));
-                                        inner_params.put("secID", a_session.getString("secID"));
-                                        inner_params.put("sesID", a_session.getString("sesID"));
-                                    } catch (JSONException e){
-                                        System.out.println("JSON error1");
-                                    }
-                                    System.out.println("HERE7");
-                                    String url = "http://10.0.2.2/phase3/php_stuff/php/enroll-mentee-session.php";
-                                    StringRequest inner_sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-                                        @Override
-                                        public void onResponse(String inner_response) {
-                                            System.out.println(inner_response);
-                                            try {
-                                                JSONObject the_inner_response = new JSONObject(inner_response);
-                                                int inner_status = the_inner_response.getInt("status");
-
-                                                if (inner_status == 1) {
-                                                    Intent inner_i = new Intent(ParentViewSessions.this, ParentViewSessions.class);
-                                                    startActivity(inner_i);
-                                                } else {
-
-                                                }
-
-                                            } catch (JSONException e) {
-                                                System.out.println("JSON error2");
-                                            }
-                                        }
-                                    }, new Response.ErrorListener() {
-                                        @Override
-                                        public void onErrorResponse(VolleyError error) {
-                                            System.out.println(error.toString());
-                                        }
-
-                                    }) {
-                                        @Override
-                                        protected Map<String, String> getParams() {
-                                            return inner_params;
-                                        }
-                                    };
-                                    inner_sr.setShouldCache(false);
-                                    Q.add(inner_sr);
-                                });
-
-                            } else if ( or_status == -1) {
-                                TextView cloak = new TextView(getApplicationContext());
-                                cloak.setText("Currently participating");
-                                cloak.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
-                                cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                                ((LinearLayout) line).addView(cloak);
-                            } else if ( or_status == -2) {
-                                TextView cloak = new TextView(getApplicationContext());
-                                cloak.setText("Session has ended");
-                                cloak.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
-                                cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                                ((LinearLayout) line).addView(cloak);
-                            } else if ( or_status == -3) {
-                                TextView cloak = new TextView(getApplicationContext());
-                                cloak.setText("Missed Thursday Deadline");
-                                cloak.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
-                                cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                                ((LinearLayout) line).addView(cloak);
-                            } else {
-                                System.out.println("HERE8");
-                                TextView cloak = new TextView(getApplicationContext());
-                                cloak.setText("Cannot mentor");
-                                cloak.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
-                                cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                                ((LinearLayout) line).addView(cloak);
-                            } */
                         }
                     }
                 } catch (JSONException e) {

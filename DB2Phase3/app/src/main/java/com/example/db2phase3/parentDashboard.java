@@ -82,6 +82,14 @@ public class parentDashboard extends AppCompatActivity {
                     String name = the_response.getString("name");
                     System.out.println(name);
                     String role = the_response.getString("role");
+
+                    TextView user_view = findViewById(R.id.p_dashboard1);
+                    user_view.setText("User: " + name);
+                    user_view = findViewById(R.id.p_dashboard7);
+                    user_view.setText("User: " + name);
+                    user_view = findViewById(R.id.p_dashboard30);
+                    user_view.setText("User: " + name);
+
                     JSONArray child_objs = the_response.getJSONArray("children");
                     View line =  findViewById(R.id.p_dash);
                     for (int i = 0; i < child_objs.length(); i++){
@@ -93,14 +101,14 @@ public class parentDashboard extends AppCompatActivity {
                         String[] fields = new String[]{ "name","role"};
                         for (int j = 0; j < 2; j++){
                             TextView cloak = new TextView(getApplicationContext());
-                            cloak.setText(a_child.getString(fields[j]));
+                            cloak.setText("Name: " + a_child.getString(fields[j]));
                             cloak.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                             cloak.setTextSize(30);
                             ((LinearLayout) line).addView(cloak);
                         j++;
 
                             TextView zz = new TextView(getApplicationContext());
-                            zz.setText(a_child.getString(fields[j]));
+                            zz.setText("Role:" + a_child.getString(fields[j]));
                             zz.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                             zz.setTextSize(30);
                             ((LinearLayout) line).addView(zz);

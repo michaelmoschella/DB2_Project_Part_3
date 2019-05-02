@@ -15,6 +15,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
             <TextView
 
                 android:layout_width="wrap_content"
@@ -47,7 +48,7 @@
                 android:id="@+id/p_dashboard2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Profile"
+                android:text="Role: Parent"
                 android:textSize="30dp"></TextView>
 
             <Button
@@ -92,14 +93,14 @@
                 android:id="@+id/p_dashboard7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Parent"
+                android:text="User"
                 android:textSize="30dp"></TextView>
 
             <TextView
                 android:id="@+id/p_dashboard8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sections"
+                android:text="Role: Parent"
                 android:textSize="30dp"></TextView>
 
             <Button
@@ -118,14 +119,14 @@
                 android:id="@+id/p_dashboard30"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Parent"
+                android:text="User"
                 android:textSize="30dp"></TextView>
 
             <TextView
                 android:id="@+id/p_dashboard31"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sessions"
+                android:text="Role: Moderator"
                 android:textSize="30dp"></TextView>
 
             <Button
